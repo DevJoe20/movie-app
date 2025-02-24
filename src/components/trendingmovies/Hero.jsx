@@ -50,7 +50,7 @@ const Hero = () => {
           ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), 
              linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent), 
              linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), 
-             url(https://image.tmdb.org/t/p/original${currentMovie.poster_path})`
+             url(https://image.tmdb.org/t/p/original${currentMovie.backdrop_path})`
           : "none",
         width: "100vw",
         height: "100vh",
