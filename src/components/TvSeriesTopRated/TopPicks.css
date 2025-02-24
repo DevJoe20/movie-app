@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background: #121212; */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+h1{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f8f8f8;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+}
+/* .movie-container h1{
+    margin: 2rem;
+    text-align: center;
+} */
+.TopPicks-grid{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 30px 35px;
+}
+.TopPicks-grid div{
+    padding: 15px;
+    border-radius: 10px;
+    border-radius: 2px solid #fff;
+    background-color: #222;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0.3s ease;
+}
+.TopPicks-grid div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+.TopPicks-grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.toppicks-title{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.7);
+    padding: 5px 10px;
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+@media (max-width: 1024px) {
+    .TopPicks-grid {
+        grid-template-columns: repeat(3, auto);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .TopPicks-grid {
+        grid-template-columns: repeat(2, auto);
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .TopPicks-grid {
+        grid-template-columns: repeat(1, auto);
+        gap: 1.5rem;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .toppicks-title {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 300px) {
+    .TopPicks-grid {
+        padding: 10px;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .toppicks-title {
+        font-size: 12px;
+        padding: 3px 5px;
+    }
+
+    .TopPicks-grid div {
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
