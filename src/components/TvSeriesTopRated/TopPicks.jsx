@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './TopPicks.css'
 
 const key = import.meta.env.VITE_APP_API_KEY;
@@ -33,9 +34,10 @@ const TopPicks = () => {
             {movies.map((movie) => (
             <div className='TopPicks-card'
             key={movie.id}>
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt=""/>
-                
-                <p className='toppicks-title'>{movie.original_name}</p>
+              <Link to={`/movie/${movie.id}`} className="movie-link">
+              <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt=""/>
+              <p className='toppicks-title'>{movie.original_name}</p>
+              </Link>
                 {/* <p className='toppicks-title'>{movie.first_air_date}</p> */}
             </div>
             ))}

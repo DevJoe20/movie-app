@@ -177,6 +177,11 @@
         padding-left: 0;
     }
 
+    .movie-link Link p{
+      text-decoration: none; /* Removes underline */
+      /* color: inherit; */
+      color: white;
+    }
     .NowPlaying-slide img {
         width: 100px;
     }

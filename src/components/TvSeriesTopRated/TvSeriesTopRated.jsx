@@ -65,10 +65,12 @@ const TvSeriesTopRated = () => {
       <Slider {...settings}>
         {movies.map((movie) => (
           <div className="Tops-slide"
-          key={movie.id} onClick={() => navigate(`/movie/${movie.id}`)}>
+          key={movie.id}>
+            <Link to={`/movie/${movie.id}`} className="movie-link">
             <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title}/>
             <p>{movie.original_name}</p>
             <p>{movie.first_air_date}</p>
+            </Link>
           </div>
         ))}
       </Slider>

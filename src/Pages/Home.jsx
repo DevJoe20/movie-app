@@ -6,6 +6,7 @@ import Trends from '../components/trends/Trends'
 import TvSeriesTopRated from '../components/TvSeriesTopRated/TvSeriesTopRated'
 import AiringToday from '../components/Airingtoday/AiringToday'
 import OnTheAir from '../components/Ontheair/OnTheAir'
+import AuthForm from '../components/AuthForm/AuthForm'
 const Home = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const Home = () => {
     <TvSeriesTopRated />
     <AiringToday />
     <OnTheAir />
+    <AuthForm />
     </>
   )
 }

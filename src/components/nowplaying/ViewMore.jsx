@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './ViewMore.css';
 
 
@@ -35,12 +36,13 @@ const ViewMore = () => {
             {movies.map((movie) => (
             <div className='movie-card'
             key={movie.id}>
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt=""/>
-                
+                <Link to={`/movie/${movie.id}`} className="movie-link">
+                <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt=""/>
                 <p className='movie-title'>{movie.title}</p>
-
+                </Link>
             </div>
             ))}
+
         </div>
     </div>
   )

@@ -1,0 +1,392 @@
+.hero-movie {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 80px;
+    margin: 2rem 0;
+    position: absolute;
+    top: 0;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .logo-container img {
+    height: 40px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-links li {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .nav-links li:hover {
+    color: #f39c12;
+  }
+  
+  .nav-icons img {
+    width: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+  }
+
+  .movie-details {
+    max-width: 600px;
+    padding-left: 50px;
+  }
+  
+  .movie-details h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .movie-info {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #ccc;
+  }
+  
+  .rating {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .watch-now {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .watch-now:hover {
+    background-color: #0056b3;
+  }
+  
+  .preview {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .preview:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .movie-details-container {
+    max-width: 90%;
+    margin: 40px auto;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Movie Description */
+  .movie-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+  
+  /* Genres Section */
+  .genres {
+    margin-bottom: 20px;
+  }
+  
+  .genres h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .genre {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Characters Section */
+  .characters {
+    margin-bottom: 30px;
+  }
+  
+  .character-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .actor {
+    text-align: center;
+  }
+  
+  .actor img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .actor p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
+  
+  /* Director Section */
+  .director {
+    margin-bottom: 30px;
+  }
+  
+  .director-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .director img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .director p {
+    font-size: 1rem;
+  }
+  
+  /* Suggestions Section */
+  .suggestions {
+    margin-top: 40px;
+  }
+  
+  .suggestions h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .suggestions-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+  }
+  
+  .suggested-movie img {
+    width: 120px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .suggested-movie img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .movie-details-container {
+      max-width: 95%;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-links, .nav-icons {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+  
+    .nav-links li, .nav-icons img {
+      padding: 10px;
+    }
+  
+    /* Show menu when toggled */
+    .navbar.open .nav-links,
+    .navbar.open .nav-icons {
+      display: flex;
+    }
+  
+    .actor img,
+    .director img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .suggested-movie img {
+      width: 100px;
+      height: 150px;
+    }
+  }
+  /* @media (max-width: 600px) {
+    .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links, .nav-icons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links li, .nav-icons img {
+    padding: 10px;
+  }
+
+  .navbar.open .nav-links,
+  .navbar.open .nav-icons {
+    display: flex;
+  }
+  } */
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 10px 20px;
+    }
+  
+    .movie-details {
+      padding-left: 20px;
+      text-align: center;
+    }
+  
+    .movie-details h1 {
+      font-size: 2rem;
+    }
+  
+    .movie-info {
+      font-size: 1rem;
+    }
+  
+    .rating {
+      font-size: 1.1rem;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .buttons button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .hero-movie {
+      height: 100vh;
+      padding: 10px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .logo-container img {
+      width: 40px;
+    }
+  
+    .nav-links {
+      display: none; /* Hide nav links */
+    }
+  
+    .nav-icons {
+      display: flex;
+      gap: 8px;
+    }
+  
+    .nav-icons img {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .movie-details {
+      max-width: 90%;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .movie-details h1 {
+      font-size: 1.5rem;
+    }
+  
+    .movie-info {
+      font-size: 0.9rem;
+    }
+  
+    .rating {
+      font-size: 1rem;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .buttons button {
+      font-size: 0.9rem;
+      padding: 8px;
+      width: 100%;
+    }
+  }
+  

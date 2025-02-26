@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './SeeAll.css';
 
 const key = import.meta.env.VITE_APP_API_KEY;
@@ -34,10 +35,10 @@ const SeeAll = () => {
             {movies.map((movie) => (
             <div className='SeeAll-card'
             key={movie.id}>
+                <Link to={`/movie/${movie.id}`} className="movie-link">
                 <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt=""/>
                 <p className='seeall-title'>{movie.name}</p>
-                {/* <p className='seeall-title'>{movie.first_air_date}</p> */}
-                {/* <p className='seeall-title'>{movie.vote_average}</p> */}
+                </Link>
             </div>
             ))}
         </div>

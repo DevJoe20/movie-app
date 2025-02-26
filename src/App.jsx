@@ -10,8 +10,8 @@ import BrowseMore from './components/trends/BrowseMore'
 import TopPicks from './components/TvSeriesTopRated/TopPicks'
 import DiscoverMore from './components/Airingtoday/DiscoverMore'
 import SeeAll from './components/Ontheair/SeeAll'
-import AiringTodayDetails from './components/Airingtoday/AiringTodayDetails'
-import NowPlayingDetails from './components/nowplaying/NowPlayingDetails'
+import DetailsPage from './Pages/DetailsPage'
+import MovieFooter from './components/MovieFooter/MovieFooter'
 // import MovieFooter from './components/MovieFooter/MovieFooter'
 
 function App() {
@@ -25,12 +25,11 @@ function App() {
         <Route path='/exploreall' element={<ExploreAll />} />
         <Route path='/browsemore' element={<BrowseMore />} />
         <Route path='/toppicks' element={<TopPicks />}/>
-        <Route path='/movie/:id' element={<AiringTodayDetails />} />
-        {/* <Route path='/movie/:id' element={<AiringTodayDetails />} /> */}
-        <Route path='/movie/:id'element={<NowPlayingDetails />}/>
+        <Route path='/movie/:id' element={<DetailsPage />}/>
         <Route path='/discovermore' element={<DiscoverMore />}/>
         <Route path='/seeall' element={<SeeAll />}/>
       </Routes>
+      <MovieFooter />
       {/* <MovieFooter /> */}
     </>
   )

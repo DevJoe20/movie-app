@@ -46,6 +46,12 @@ const TopRated = () => {
                         },
                       },
                       {
+                        breakpoint: 900, // Tablets
+                        settings: {
+                          slidesToShow: 3,
+                        },
+                      },
+                      {
                         breakpoint: 768, // Mobile devices
                         settings: {
                           slidesToShow: 2,
@@ -66,11 +72,13 @@ const TopRated = () => {
       <Slider {...settings}>
         {movies.map((movie) => (
           <div className="TopRated-slide"
-          key={movie.id} onClick={() => navigate(`/movie/${movie.id}`)}>
+          key={movie.id}>
+            <Link to={`/movie/${movie.id}`} className="movie-link">
             <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title}
             style={{width: "200px"}}/>
             <p>{movie.title}</p>
             <p>{movie.release_date}</p>
+            </Link>
           </div>
         ))}
       </Slider>

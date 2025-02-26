@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import './BrowseMore.css'
 
 
@@ -34,9 +35,10 @@ const BrowseMore = () => {
             {movies.map((movie) => (
             <div className='browsemore-card'
             key={movie.id}>
+                <Link to={`/movie/${movie.id}`} className="movie-link">
                 <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt=""/>
-                
                 <p className='browsemore-title'>{movie.title}</p>
+                </Link>
                 {/* <p className='browsemore-title'>{movie.release_date}</p> */}
             </div>
             ))}

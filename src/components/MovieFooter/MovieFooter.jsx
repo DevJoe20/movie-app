@@ -1,66 +1,77 @@
-// import React from 'react'
-// import { FaFacebookF, FaInstagram, FaTwitter, FaTelegramPlane } from "react-icons/fa";
-// import "./MovieFooter.css";
+import { FaFacebook, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
+import "./MovieFooter.css";
 
-// const MovieFooter = () => {
-//   return (
-//     <footer className="bg-black text-white py-6">
-//       <div className="max-w-6xl mx-auto px-6">
-//         <div className="grid grid-cols-4 gap-6 border-b border-gray-600 pb-6">
-//           <div>
-//             <h2 className="text-lg font-semibold">Rules</h2>
-//             <ul className="mt-2 space-y-2 text-gray-300 text-sm">
-//               <li>Main Page</li>
-//               <li>About Us</li>
-//               <li>Contact Us</li>
-//               <li>Collaborate with Us</li>
-//               <li>FAQ</li>
-//             </ul>
-//           </div>
-//           <div>
-//             <h2 className="text-lg font-semibold">Cinema Scene</h2>
-//             <ul className="mt-2 space-y-2 text-gray-300 text-sm">
-//               <li>Main Page</li>
-//               <li>About Us</li>
-//               <li>Contact Us</li>
-//               <li>Collaborate with Us</li>
-//               <li>FAQ</li>
-//             </ul>
-//           </div>
-//           <div>
-//             <h2 className="text-lg font-semibold">Download</h2>
-//             <ul className="mt-2 space-y-2 text-gray-300 text-sm">
-//               <li>Movie</li>
-//               <li>Series</li>
-//               <li>Animation</li>
-//               <li>Search</li>
-//               <li>Category</li>
-//             </ul>
-//           </div>
-//           <div>
-//             <ul className="space-y-2 text-gray-300 text-sm">
-//               <li className="font-semibold text-white">Privacy Policy</li>
-//               <li className="font-semibold text-white">Terms & Conditions</li>
-//               <li className="font-semibold text-white">Help & Support</li>
-//             </ul>
-//           </div>
-//         </div>
-//         <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm mt-6">
-//           <p className="md:w-2/3">
-//             This website started in 2017 and operates legally. You can download movies and series
-//             easily here. This website provides the best experience with high-speed servers and quality downloads.
-//           </p>
-//           <div className="flex items-center space-x-4 mt-4 md:mt-0">
-//             <FaFacebookF className="cursor-pointer hover:text-white" />
-//             <FaInstagram className="cursor-pointer hover:text-white" />
-//             <FaTwitter className="cursor-pointer hover:text-white" />
-//             <FaTelegramPlane className="cursor-pointer hover:text-white" />
-//           </div>
-//         </div>
-//         <p className="text-gray-400 text-sm text-center mt-4">Support Phone: 0912******15</p>
-//       </div>
-//     </footer>
-//   );
-// };
 
-// export default MovieFooter;
+const MovieFooter = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        {/* Left Section */}
+        <div className="footer-logo">
+          <h2>
+            <span className="highlight">Cinema City;</span> Media for Everyone
+          </h2>
+          <p>
+            Our website started operating in 2017 and has become a professional platform for
+            downloading movies and series without censorship. Here, you can browse your favorite
+            movies and series, add them to your watchlist, and stream them online. We also provide
+            exclusive subtitles and dubbing for all films and series.
+          </p>
+          <p className="support-phone">Support Phone: 0912******15</p>
+          <div className="social-icons">
+            <FaFacebook />
+            <FaInstagram />
+            <FaTelegram />
+            <FaTwitter />
+          </div>
+        </div>
+
+        {/* Right Section - Navigation Links */}
+        <div className="footer-links">
+          <div className="footer-column">
+            <h3>Rules</h3>
+            <ul>
+              <li>Main Page</li>
+              <li>About Us</li>
+              <li>Contact Us</li>
+              <li>Collaborate with Us</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h3>Cinema City</h3>
+            <ul>
+              <li>Main Page</li>
+              <li>About Us</li>
+              <li>Contact Us</li>
+              <li>Collaborate with Us</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h3>Download</h3>
+            <ul>
+              <li>Movies</li>
+              <li>TV Series</li>
+              <li>Animation</li>
+              <li>Search</li>
+              <li>Categories</li>
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <ul>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>Help & Support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default MovieFooter

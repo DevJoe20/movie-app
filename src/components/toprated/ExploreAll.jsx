@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import './ExploreAll.css'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const key = import.meta.env.VITE_APP_API_KEY;
@@ -32,10 +33,10 @@ const ExploreAll = () => {
             {movies.map((movie) => (
             <div className='ExploreAll-card'
             key={movie.id}>
+                <Link to={`/movie/${movie.id}`} className="movie-link">
                 <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt=""/>
-                
                 <p className='overview'>{movie.title}</p>
-
+                </Link>
             </div>
             ))}
         </div>
