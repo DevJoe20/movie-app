@@ -23,8 +23,26 @@ const Hero = () => {
         },
       });
       const trendingMovies = res.data.results.slice(0, 5);
-      setMovies(trendingMovies);
-      setCurrentMovie(trendingMovies[0]); 
+
+      const moviesWithRuntime = await Promise.all(
+        trendingMovies.map(async (movie) => {
+          try {
+            const detailsRes = await axios.get(`${url}/movie/${movie.id}`, {
+              headers: {
+                accept: `application/json`,
+                Authorization: `Bearer ${key}`,
+              },
+            });
+            return { ...movie, runtime: detailsRes.data.runtime };
+          } catch (error) {
+            console.error(`Error fetching movie details for ${movie.id}:`, error);
+            return { ...movie, runtime: 'N/A' };
+          }
+        })
+      );
+
+      setMovies(moviesWithRuntime);
+      setCurrentMovie(moviesWithRuntime[0]);
     } catch (error) {
       console.error(`Error fetching movies:`, error);
     }
@@ -58,7 +76,7 @@ const Hero = () => {
         transition: "background-image 0.8s ease-in-out",
       } : {}}
     >
-      <nav className={`nav-container ${menuOpen ? "open" : ""}`}>
+      {/* <nav className={`nav-container ${menuOpen ? "open" : ""}`}>
         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? "✖" : "☰"}
         </div>
@@ -76,14 +94,54 @@ const Hero = () => {
           <button className="login-btn">Login</button>
           <button className="signup-btn">Sign Up</button>
         </div>
-      </nav>
+      </nav> */}
+      <nav className={`navbar1 ${menuOpen ? "open" : ""}`}>
+      <div className="nav-left">
+        <div className="nav-logo">
+          <img src="/Rec.png" alt="Rec" />
+          <span className="brand">Cinema Center</span>
+        </div>
+
+        {/* Hamburger Menu Button */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? "✖" : "☰"}
+        </div>
+      </div>
+
+      {/* Navigation Links */}
+      <div className={`nav-link ${menuOpen ? "show" : ""}`}>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Series</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+
+      {/* Search Bar */}
+      <div className={`nav-center ${menuOpen ? "show" : ""}`}>
+        <input type="text" placeholder="Search..." />
+      </div>
+
+      {/* Sign-in and Sign-up Buttons */}
+      <div className={`nav-right ${menuOpen ? "show" : ""}`}>
+        <button className="signup-btn">Sign-in</button>
+        <button className="signup-btn">Sign Up</button>
+      </div>
+    </nav>
 
       <div className="details">
         <h2>{currentMovie?.title || "Loading..."}</h2>
         <p>{currentMovie?.overview || "Movie details will appear here."}</p>
         <div className="details-extra">
-          <span className="rating">⭐ {currentMovie?.vote_average?.toFixed(1) || "N/A"}</span>
-          <span className="runtime">🕒 {currentMovie?.runtime || "N/A"} mins</span>
+          <span className="rating">
+          <p><img src="/rate.png" alt="rate" /></p>
+             {currentMovie?.vote_average?.toFixed(1) || "N/A"}
+          </span>
+          <span className="runtime">
+            {/* 🕒 {currentMovie?.runtime || "N/A"} mins */}
+            <p>{currentMovie.runtime ? `${currentMovie.runtime} min` : 'N/A'}</p>
+          </span>
         </div>
         <button className="watch-btn">Watch & Download in Full Quality</button>
       </div>

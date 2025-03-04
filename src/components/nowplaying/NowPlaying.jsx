@@ -18,10 +18,31 @@ const NowPlaying = () => {
                     Authorization: `Bearer ${key}`,
                 }
             });
-            setMovies(res.data.results);
-        } catch (error) {
+            const moviesData = res.data.results.slice(0, 5); 
+
+            // Fetch runtime for each movie
+            const moviesWithRuntime = await Promise.all(
+              moviesData.map(async (movie) => {
+                try {
+                  const detailsRes = await axios.get(`${url}/movie/${movie.id}`, {
+                    headers: {
+                      accept: `application/json`,
+                      Authorization: `Bearer ${key}`,
+                    },
+                  });
+      
+                  return { ...movie, runtime: detailsRes.data.runtime }; // Add runtime to movie object
+                } catch (error) {
+                  console.error(`Error fetching movie details for ${movie.id}:`, error);
+                  return { ...movie, runtime: 'N/A' }; // Handle errors gracefully
+                }
+              })
+            );
+      
+            setMovies(moviesWithRuntime);
+          } catch (error) {
             console.error(`Error fetching movies:`, error);
-        }
+          }
     };
 
     useEffect(() => {
@@ -31,7 +52,7 @@ const NowPlaying = () => {
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -39,7 +60,8 @@ const NowPlaying = () => {
             { breakpoint: 1024, settings: { slidesToShow: 4 } },
             { breakpoint: 900, settings: { slidesToShow: 3 } },
             { breakpoint: 880, settings: { slidesToShow: 3 } },
-            { breakpoint: 768, settings: { slidesToShow: 2 } },
+            { breakpoint: 768, settings: { slidesToShow: 3 } },
+            { breakpoint: 540, settings: { slidesToShow: 1 } },
             { breakpoint: 480, settings: { slidesToShow: 1 } },
         ],
     };
@@ -49,12 +71,32 @@ const NowPlaying = () => {
             <h1>Now Playing</h1>
             <Slider {...settings}>
                 {movies.map((movie) => (
-                    <div className="NowPlaying-slide" key={movie.id}>
+                   <div className="NowPlaying-grid"> 
+                      <div className="NowPlaying-slide" key={movie.id}>
                         <Link to={`/movie/${movie.id}`} className="movie-link">
-                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
-                            <p>{movie.title}</p>
-                        </Link>
-                    </div>
+                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="movie-poster" style={{ width: "1200px" }} />
+                             <div className="rating">
+                             <div className="rate">
+                             <div className="rate-icon">
+                             <p><img src="/rate.png" alt="rate" /></p>
+                             </div>
+                             <div className="rate">
+                             <p>{movie.vote_average}</p>
+                             </div>
+                             </div>
+                             <div className="time-duration">
+                             <div className="duration-icon">
+                                <p><img src="/clock.png" alt="clock" /></p>
+                             </div>
+                             <div className="duration-time">
+                                 <p>{movie.runtime ? `${movie.runtime} min` : 'N/A'}</p>
+                             </div>
+                            </div>
+                        </div>
+                        <p>{movie.title}</p>
+                       </Link>
+                      </div>
+                   </div>
                 ))}
             </Slider>
             <Link to='/viewmore'>

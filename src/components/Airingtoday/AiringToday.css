@@ -14,21 +14,39 @@ body{
     margin: auto;
     text-align: center;
     padding: 40px 0;
-    background: linear-gradient(to bottom, #1a1a1a, #121212);
   }
   
   .Airing-movie h1 {
-    font-size: 28px;
+    font-family: Vazirmatn;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 0;
+    line-height: 37.5px;
+    padding-left: 6.5rem;
+    letter-spacing: 0%;
+    text-align: left;
+
+    /* font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #00aaff;
+    text-align: left;
+    padding-left: 5.2rem;
+    margin-bottom: 0;
+    color: white; */
   }
+  .Airing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
   
   /* SLICK SLIDER STYLING */
   .Airing-movie .slick-slider {
     width: 100%;
     max-width: 100%;
     padding-left: 5rem;
+    padding-right: 5rem;
     overflow: hidden;
   }
   
@@ -43,167 +61,193 @@ body{
     padding: 10px;
     transition: transform 0.3s ease-in-out;
   }
+  .Airing-slide {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 350px;
+    text-align: center;
+    max-width: 195px;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Airing-slide .movie-path{
+    width: 175px !important;
+    max-width: 195px;
+  }
   
-  .TopRated-slide:hover {
+.Airing-slide:hover {
     transform: scale(1.05);
-  }
-  
-  /* Movie Image */
-  .Airing-slide img {
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
-  }
-  
-  /* Movie Text */
-  .Airing-slide p {
-    color: #000;
-    font-size: 20px;
-    margin: 5px 0;
-    margin-top: 8px;
+}
+
+ .Airing-movie-link {
+    text-decoration: none;
     color: white;
-    max-width: 180px;
-    overflow-wrap: break-word;
-    text-align: left;
+    display: block;
+}
+  .Airing-slide img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+  }
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .time-duration, .rate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  p {
+    font-size: 14px;
+    margin: 5px 0;
+    word-wrap: break-word; 
   }
   
   /* SEE MORE BUTTON */
   .Airing-movie .discovermore {
     margin-top: 20px;
     padding: 10px 20px;
-    background: #ffcc00;
-    color: #000;
+    background: transparent; 
+    color: #1EB7E8;
     font-size: 16px;
     font-weight: bold;
-    border: none;
+    border: 1px solid #1EB7E8;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .Airing-movie .discovermore:hover {
-    background: #e64e2e;
-  }
+    transition: background 0.3s, color 0.3s;
+}
+
+.Airing-movie .discovermore:hover {
+    background: #34bce9; 
+    color: white;
+}
 
 
 
 
-  @media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
+    .Airing-movie h1 {
+        font-size: 26px;
+        padding-left: 3rem;
+    }
+
+    .Airing-grid {
+        gap: 15px;
+        padding: 15px;
+    }
+
     .Airing-movie .slick-slider {
         padding-left: 3rem;
     }
 
-    .Airing-slide img {
-        width: 180px;
-    }
-
-    .Airing-movie h1 {
-        font-size: 26px;
-    }
-
-    .Airing-slide p {
-        font-size: 18px;
+    .Airing-slide {
+        width: 200px;
     }
 }
 
-@media (max-width: 768px) {
-    .Airing-movie {
-        max-width: 95%;
-        padding: 20px 10px;
+@media screen and (max-width: 768px) {
+    .Airing-movie h1 {
+        font-size: 24px;
+        padding-left: 2rem;
+    }
+
+    .Airing-grid {
+        gap: 10px;
+        padding: 10px;
     }
 
     .Airing-movie .slick-slider {
         padding-left: 2rem;
     }
 
+    .Airing-slide {
+        width: 180px;
+    }
+
     .Airing-slide img {
-        width: 150px;
+        width: 100%;
     }
 
-    .Airing-movie h1 {
-        font-size: 24px;
-    }
-
-    .Airing-slide p {
-        font-size: 16px;
-    }
-
-    .Airing-movie .discovermore {
+    .discovermore {
         font-size: 14px;
         padding: 8px 16px;
     }
 }
+@media screen and (max-width: 680px){
+    .Airing-movie h1 {
+      text-align: center;
+  }
+    .Airing-slide {
+        width: 180px !important;
+        max-width: 200px !important;
+        margin: auto !important;
+        /* width: 90%; */
+    }
+  
+    .Airing-slide img {
+        width: 100% !important;
+        height: auto !important;
+        /* width: 100%;
+        max-width: 200px;
+        align-items: center; */
+    }
+  }
+@media screen and (max-width: 480px) {
+    .Airing-movie h1 {
+        font-size: 22px;
+        padding-left: 1.5rem;
+    }
 
-@media (max-width: 480px) {
+    .Airing-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 5px;
+    }
+
     .Airing-movie .slick-slider {
         padding-left: 1rem;
     }
 
+    .Airing-slide {
+        width: 90%;
+    }
+
     .Airing-slide img {
-        width: 120px;
+        width: 100%;
     }
 
-    .Airing-movie h1 {
-        font-size: 20px;
-    }
-
-    .Airing-slide p {
-        font-size: 14px;
-        max-width: 140px;
-    }
-
-    .Airing-movie .discovermore {
+    .discovermore {
         font-size: 12px;
         padding: 6px 12px;
     }
 }
 
-@media (max-width: 300px) {
-    .Airing-movie {
-        padding: 10px;
+@media screen and (max-width: 300px) {
+    .Airing-movie h1 {
+        font-size: 18px;
+        padding-left: 1rem;
     }
 
-    .Airing-movie .slick-slider {
-        padding-left: 0;
+    .Airing-slide {
+        width: 100%;
+        padding: 5px;
     }
 
     .Airing-slide img {
-        width: 100px;
+        border-radius: 3px;
     }
 
-    .Airing-movie h1 {
-        font-size: 18px;
-    }
-
-    .Airing-slide p {
-        font-size: 12px;
-        max-width: 120px;
-    }
-
-    .Airing-movie .discovermore {
+    .discovermore {
         font-size: 10px;
         padding: 5px 10px;
     }
 }
-
-  
-  /* RESPONSIVENESS */
-  /* @media (max-width: 768px) {
-    .Airing-movie {
-      max-width: 95%;
-    }
-  
-    .Airing-slide img {
-      width: 150px;
-    }
-  
-    .Airing-movie h1 {
-      font-size: 24px;
-    }
-  
-    .Airing-movie .discovermore {
-      font-size: 14px;
-    }
-  }
-   */

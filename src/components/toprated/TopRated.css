@@ -14,14 +14,25 @@ body{
     margin: auto;
     text-align: center;
     padding: 40px 0;
-    background: rgba(194, 151, 151, 0.486);
+    /* background: rgba(194, 151, 151, 0.486); */
   }
   
   .TopRated-movie h1 {
-    font-size: 28px;
+    font-family: Vazirmatn;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37.5px;
+    margin-bottom: 0;
+    padding-left: 7rem;
+    letter-spacing: 0%;
+    text-align: left;
+
+    /* font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
+    margin-bottom: 0;
+    text-align: left;
+    padding-left: 5.5rem;
+    color: #fff; */
   }
   
   /* SLICK SLIDER STYLING */
@@ -29,6 +40,7 @@ body{
     width: 100%;
     max-width: 100%;
     padding-left: 5rem;
+    padding-right: 5rem;
     overflow: hidden;
   }
   
@@ -47,154 +59,218 @@ body{
   .TopRated-slide:hover {
     transform: scale(1.05);
   }
+  .TopRated-grid {
+    display: grid;
+    gap: 20px; 
+    justify-content: center;
+    padding: 20px;
+  }
   
   /* Movie Image */
   .TopRated-slide img {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    object-fit: cover; 
   }
   
   /* Movie Text */
-  .TopRated-slide p {
-    color: #000;
-    font-size: 20px;
+  .TopRated-slide {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 350px;
+  }
+  .TopRated-slide .movie-poster{
+    width: 180px !important;
+    max-width: 250px;
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .time-duration, .rate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  p {
+    font-size: 14px;
     margin: 5px 0;
-    margin-top: 8px;
-    color: white;
-    max-width: 180px;
-    overflow-wrap: break-word;
-    text-align: left;
+    word-wrap: break-word; 
   }
   
   /* SEE MORE BUTTON */
   .TopRated-movie .Explore-All {
     margin-top: 20px;
     padding: 10px 20px;
-    background: #ff5733;
-    color: #fff;
+    background: transparent;
+    color: #1EB7E8; 
     font-size: 16px;
     font-weight: bold;
-    border: none;
+    border: 1px solid #1EB7E8;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
-  }
+    transition: background 0.3s, color 0.3s;
+}
+
+.TopRated-movie .Explore-All:hover {
+    background: #1EB7E8; 
+    color: #fff; 
+}
+
   
   .TopRated-movie .Explore-All:hover {
-    background: #e64e2e;
+    background: #046b8d;
   }
-  
-  /* RESPONSIVENESS */
-  /* @media (max-width: 768px) {
+
+  @media screen and (max-width: 1024px) {
     .TopRated-movie {
-      max-width: 95%;
-    }
-  
-    .TopRated-slide img {
-      width: 150px;
-    }
-  
-    .TopRated-movie h1 {
-      font-size: 24px;
-    }
-  
-    .TopRated-movie .details {
-      font-size: 14px;
-    }
-  } */
-
-  @media (max-width: 1024px) {
-    .TopRated-movie .slick-slider {
-        padding-left: 3rem;
-    }
-
-    .TopRated-slide img {
-        width: 180px;
+        padding: 30px 15px;
     }
 
     .TopRated-movie h1 {
         font-size: 26px;
+        padding-left: 3rem;
     }
 
-    .TopRated-slide p {
-        font-size: 18px;
+    .TopRated-grid {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .TopRated-movie .slick-slider {
+        padding-left: 3rem;
+    }
+
+    .TopRated-slide {
+        max-width: 180px;
+    }
+
+    .TopRated-slide img {
+        max-width: 180px;
     }
 }
 
-@media (max-width: 768px) {
-    .TopRated-movie {
-        max-width: 95%;
-        padding: 20px 10px;
+@media screen and (max-width: 768px) {
+    .TopRated-movie h1 {
+        font-size: 24px;
+        padding-left: 2rem;
+    }
+
+    .TopRated-grid {
+        gap: 10px;
+        padding: 10px;
     }
 
     .TopRated-movie .slick-slider {
         padding-left: 2rem;
     }
 
+    .TopRated-slide {
+        max-width: 160px;
+        padding: 8px;
+    }
+
     .TopRated-slide img {
-        width: 150px;
-    }
-
-    .TopRated-movie h1 {
-        font-size: 24px;
-    }
-
-    .TopRated-slide p {
-        font-size: 16px;
+        max-width: 160px;
     }
 
     .TopRated-movie .Explore-All {
         font-size: 14px;
-        padding: 8px 16px;
+        padding: 8px 15px;
     }
 }
-
-@media (max-width: 480px) {
-    .TopRated-movie .slick-slider {
-        padding-left: 1rem;
-    }
-
-    .TopRated-slide img {
-        width: 120px;
-    }
-
-    .TopRated-movie h1 {
-        font-size: 20px;
-    }
-
-    .TopRated-slide p {
-        font-size: 14px;
-        max-width: 140px;
-    }
-
-    .TopRated-movie .Explore-All {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-}
-
-@media (max-width: 300px) {
+@media screen and (max-width: 480px) {
     .TopRated-movie {
+        padding: 20px;
+    }
+
+    .TopRated-movie h1 {
+        font-family: Vazirmatn;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 0;
+        padding-left: 7.7rem;
+    }
+
+    .TopRated-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
         padding: 10px;
+        padding-left: 120px;
     }
 
     .TopRated-movie .slick-slider {
         padding-left: 0;
     }
 
+    .TopRated-slide {
+        width: 190px;
+        max-width: 400px;
+        padding: 5px;
+        
+    }
+
     .TopRated-slide img {
-        width: 100px;
+        max-width: 170px;
+        border-radius: 5px;
+    }
+
+    .rating {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .TopRated-movie .Explore-All {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .TopRated-movie {
+        padding: 10px;
     }
 
     .TopRated-movie h1 {
         font-size: 18px;
+        text-align: left;
+        padding-left: 8px;
     }
 
-    .TopRated-slide p {
-        font-size: 12px;
-        max-width: 120px;
+    .TopRated-grid {
+        gap: 8px;
+        padding: 5px;
+    }
+    .TopRated-slide {
+        width: 170px;
+        max-width: 300px;
+        padding: 5px;    
+    }
+
+    .TopRated-slide img {
+        max-width: 150px;
     }
 
     .TopRated-movie .Explore-All {
@@ -202,5 +278,6 @@ body{
         padding: 5px 10px;
     }
 }
+
 
   

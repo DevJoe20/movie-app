@@ -9,22 +9,40 @@
     margin: auto;
     text-align: center;
     padding: 40px 0;
-    background: linear-gradient(to bottom, #1a1a1a, #121212);
+    /* background: linear-gradient(to bottom, #1a1a1a, #121212); */
     padding: 20px;
   }
   
   .Trends-movie h1 {
-    font-size: 28px;
+    font-family: Vazirmatn;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37.5px;
+    letter-spacing: 0%;
+    margin-bottom: 0;
+    padding-left: 7rem;
+    text-align: left;
+
+    /* font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #00aaff;
+    text-align: left;
+    padding-left: 5rem;
+    margin-bottom: 0;
+    color: white; */
   }
-  
+  .Trends-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
   /* SLICK SLIDER STYLING */
   .Trends-movie .slick-slider {
     width: 100%;
     max-width: 100%;
     padding-left: 5rem;
+    padding-right: 5rem;
     overflow: hidden;
   }
   
@@ -39,165 +57,236 @@
     padding: 10px;
     transition: transform 0.3s ease-in-out;
   }
+  .Trends-slide {
+    /* background: #1a1a1a; */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 350px;
+    text-align: center;
+    padding: 10px;
+    max-width: 195px;
+    transition: transform 0.3s ease-in-out;
+}
+.Trends-slide .movie-poster{
+    width: 175px !important;
+    max-width: 250px;
+}
+
+
   
   .Trends-slide:hover {
     transform: scale(1.05);
   }
-  
-  /* Movie Image */
-  .Trends-slide img {
-    width: 200px;
+  .Trends-movie-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+.Trends-slide img {
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
   }
   
-  /* Movie Text */
-  .Trends-slide p {
-    color: #ddd;
-    font-size: 20px;
+  .time-duration, .rate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  p {
+    font-size: 14px;
     margin: 5px 0;
-    margin-top: 5px;
-    max-width: 180px;
-    overflow-wrap: break-word;
-    text-align: left;
-
+    word-wrap: break-word; 
   }
   
   /* SEE MORE BUTTON */
-  .browsemore{
+  .browsemore {
     margin-top: 20px;
     padding: 10px 20px;
-    background: #ffcc00;
-    color: #000;
+    background: transparent; 
+    color: #1EB7E8;
     font-size: 16px;
     font-weight: bold;
-    border: none;
+    border: 1px solid #1EB7E8;
+    /* border: 2px solid #ffcc00;  */
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
+}
+
+.browsemore:hover {
+    background: #24afdd; 
+    color: white; 
+}
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .Trends-movie {
+      padding: 30px 15px;
   }
 
+  .Trends-movie h1 {
+      font-size: 26px;
+      padding-left: 3rem;
+  }
 
+  .Trends-grid {
+      gap: 15px;
+      padding: 15px;
+  }
 
+  .Trends-movie .slick-slider {
+      padding-left: 3rem;
+  }
 
+  .Trends-slide {
+      width: 200px;
+  }
 
-
-  @media (max-width: 1024px) {
-    .Trends-movie .slick-slider {
-        padding-left: 3rem;
-    }
-
-    .Trends-slide img {
-        width: 180px;
-    }
-
-    .Trends-movie h1 {
-        font-size: 26px;
-    }
-
-    .Trends-slide p {
-        font-size: 18px;
-    }
+  .Trends-slide img {
+      width: 100%;
+  }
 }
 
-@media (max-width: 768px) {
-    .Trends-movie {
-        max-width: 95%;
-        padding: 20px 10px;
-    }
-
-    .Trends-movie .slick-slider {
-        padding-left: 2rem;
-    }
-
-    .Trends-slide img {
-        width: 150px;
-    }
-
-    .Trends-movie h1 {
-        font-size: 24px;
-    }
-
-    .Trends-slide p {
-        font-size: 16px;
-    }
-
-    .browsemore {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .Trends-movie .slick-slider {
-        padding-left: 1rem;
-    }
-
-    .Trends-slide img {
-        width: 120px;
-    }
-
-    .Trends-movie h1 {
-        font-size: 20px;
-    }
-
-    .Trends-slide p {
-        font-size: 14px;
-        max-width: 140px;
-    }
-
-    .browsemore {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-}
-
-@media (max-width: 300px) {
-    .Trends-movie {
-        padding: 10px;
-    }
-
-    .Trends-movie .slick-slider {
-        padding-left: 0;
-    }
-
-    .Trends-slide img {
-        width: 100px;
-    }
-
-    .Trends-movie h1 {
-        font-size: 18px;
-    }
-
-    .Trends-slide p {
-        font-size: 12px;
-        max-width: 120px;
-    }
-
-    .browsemore {
-        font-size: 10px;
-        padding: 5px 10px;
-    }
-}
-
-  
-  /* RESPONSIVENESS */
-  /* @media (max-width: 768px) {
-    .Trends-movie {
-      max-width: 95%;
-    }
-  
-    .Trends-slide img {
-      width: 150px;
-    }
-  
-    .NowPlaying-movie h1 {
+@media screen and (max-width: 768px) {
+  .Trends-movie h1 {
       font-size: 24px;
-    }
-  
-    .Trends-movie button {
-      font-size: 14px;
-    }
+      padding-left: 2rem;
   }
-   */
+
+  .Trends-grid {
+      gap: 10px;
+      padding: 10px;
+  }
+
+  .Trends-movie .slick-slider {
+      padding-left: 2rem;
+  }
+
+  .Trends-slide {
+      width: 180px;
+      padding: 8px;
+  }
+
+  .Trends-slide img {
+      width: 100%;
+  }
+
+  .browsemore {
+      font-size: 14px;
+      padding: 8px 15px;
+  }
+}
+@media screen and (max-width: 680px){
+    .Trends-slide {
+        width: 180px !important;
+        max-width: 200px !important;
+        margin: auto !important;
+        /* width: 90%; */
+    }
+
+    .Trends-slide img {
+        width: 100% !important;
+        height: auto !important;
+        /* width: 100%;
+        max-width: 200px;
+        align-items: center; */
+    }
+}
+@media screen and (max-width: 480px) {
+  .Trends-movie {
+      padding: 20px;
+  }
+
+  .Trends-movie h1 {
+      font-size: 22px;
+      text-align: center;
+      padding-left: 0;
+  }
+
+  .Trends-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+  }
+
+  .Trends-movie .slick-slider {
+      padding-left: 0;
+  }
+
+  .Trends-slide {
+      width: 160px;
+      padding: 5px;
+  }
+
+  .Trends-slide img {
+      width: 100%;
+  }
+
+  .rating {
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  p {
+      font-size: 12px;
+      text-align: center;
+  }
+
+  .browsemore {
+      font-size: 12px;
+      padding: 6px 12px;
+      margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .Trends-movie {
+      padding: 10px;
+  }
+
+  .Trends-movie h1 {
+      font-size: 18px;
+      text-align: left;
+      padding-left: 8px;
+  }
+
+  .Trends-grid {
+      gap: 8px;
+      padding: 5px;
+  }
+
+.Trends-slide img {
+    max-width: 180px;
+}
+
+
+  /* .Trends-slide {
+      width: 140px;
+  } */
+
+  /* .Trends-slide img {
+      width: 100%;
+  } */
+
+  .browsemore {
+      font-size: 10px;
+      padding: 5px 10px;
+  }
+}
