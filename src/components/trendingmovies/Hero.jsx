@@ -139,8 +139,8 @@ const Hero = () => {
              {currentMovie?.vote_average?.toFixed(1) || "N/A"}
           </span>
           <span className="runtime">
-            {/* 🕒 {currentMovie?.runtime || "N/A"} mins */}
-            <p>{currentMovie.runtime ? `${currentMovie.runtime} min` : 'N/A'}</p>
+            🕒 {currentMovie?.runtime || "N/A"} mins
+            {/* <p>{currentMovie.runtime ? `${currentMovie.runtime} min` : 'N/A'}</p> */}
           </span>
         </div>
         <button className="watch-btn">Watch & Download in Full Quality</button>
